@@ -18,6 +18,9 @@ Laravel環境構築
 - Laravel 10.0
 - MySQL 8.0
 
+## ER図
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/test1.drawio.png)
+
 ## URL
 - 開発環境：http://localhost/
 - phpMyAdmin：http://localhost:8080/
