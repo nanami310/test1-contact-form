@@ -17,6 +17,8 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', [ContactController::class, 'index']);
+Route::get('/', [ContactController::class, 'index'])->name('input.page');
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
+Route::post('/contacts/store', [ContactController::class, 'store'])->name('contacts.store');
+Route::post('/contacts/clear', [ContactController::class, 'clearSession'])->name('contacts.clear');

@@ -8,13 +8,15 @@
   <title>Contact Form</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/confirm.css') }}" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas&family=Noto+Serif+JP:wght@900&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header class="header">
     <div class="header__inner">
       <a class="header__logo" href="/">
-        Contact Form
+        FashionablyLate
       </a>
     </div>
   </header>
@@ -22,7 +24,7 @@
   <main>
     <div class="confirm__content">
       <div class="confirm__heading">
-        <h2>お問い合わせ内容確認</h2>
+        <h2>Confirm</h2>
       </div>
       <form class="form" action="/contacts" method="post">
         @csrf
@@ -32,6 +34,12 @@
               <th class="confirm-table__header">お名前</th>
               <td class="confirm-table__text">
                 <input type="text" name="name" value="{{ $contact['name'] }}" readonly />
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
+              <th class="confirm-table__header">性別</th>
+              <td class="confirm-table__text">
+                <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly />
               </td>
             </tr>
             <tr class="confirm-table__row">
@@ -47,6 +55,24 @@
               </td>
             </tr>
             <tr class="confirm-table__row">
+              <th class="confirm-table__header">住所</th>
+              <td class="confirm-table__text">
+                <input type="text" name="address" value="{{ $contact['address'] }}" readonly />
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
+              <th class="confirm-table__header">建物名</th>
+              <td class="confirm-table__text">
+                <input type="text" name="building" value="{{ $contact['building'] }}" readonly />
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
+              <th class="confirm-table__header">お問い合わせの種類</th>
+              <td class="confirm-table__text">
+                <input type="text" name="content_type" value="{{ $contact['content_type'] }}" readonly />
+              </td>
+            </tr>
+            <tr class="confirm-table__row">
               <th class="confirm-table__header">お問い合わせ内容</th>
               <td class="confirm-table__text">
                 <input type="text" name="content" value="{{ $contact['content'] }}" readonly />
@@ -56,10 +82,13 @@
         </div>
         <div class="form__button">
           <button class="form__button-submit" type="submit">送信</button>
+          <button class="form__button-retouching" type="button"  onclick="location.href='{{ route('input.page') }}';">修正</button>
         </div>
       </form>
     </div>
-  </main>
+  </main>      
+  
+  
 </body>
 
 </html>

@@ -1,27 +1,92 @@
-.header {
-    background: #000;
+body {
+    margin: 0;
+    /* マージンをリセット */
+    height: 100vh;
+    /* ビューポートの高さに合わせる */
+    display: flex;
+    justify-content: center;
+    /* 水平中央揃え */
+    align-items: center;
+    /* 垂直中央揃え */
+    overflow: hidden;
+    /* はみ出した部分を隠す */
 }
 
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+.background-text {
+    position: relative;
+    font-size: 150px;
+    /* フォントサイズを大きく設定 */
+    color: rgba(0, 0, 0, 0.1);
+    /* 文字色を薄い黒に設定 */
+    text-align: center;
+    /* テキストを中央揃え */
+    white-space: nowrap;
+    /* テキストが折り返さないようにする */
+    
 }
 
-.header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+.background-text h1 {
+    position: absolute;
+    /* 絶対位置に設定 */
+    top: 50%;
+    /* 縦中央に配置 */
+    left: 50%;
+    /* 横中央に配置 */
+    transform: translate(-50%, -100%);
+    /* 中心に揃える */
+    font-family: "Noto Serif JP", serif;
+}
+
+.overlay-text {
+    position: absolute;
+    /* 絶対位置に設定 */
+    top: 60%;
+    /* 背景文字の少し下に配置 */
+    left: 50%;
+    /* 横中央に配置 */
+    transform: translate(-50%, -50%);
+    /* 中心に揃える */
 }
 
 .thanks__content {
-    margin: 0 auto;
     padding: 30px 15px;
-    max-width: 1230px;
 }
 
 .thanks__heading {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin-bottom: 40px;
-    text-align: center;
+    font-size: 20px;
+    color: #82766A;
 }
+
+.form__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    position: absolute;
+    transform: translate(-50%, 0);
+    padding: 10px;
+    
+
+    border: none;
+    background: #82766A;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Noto Serif JP", serif;
+}
+
+
+
+
+
+
+
+
+
+
+

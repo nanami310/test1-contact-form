@@ -1,18 +1,22 @@
 .header {
-    background: #000;
+    background: #ffffff;
+    border-bottom: 2px solid #E4E4E4;
+    width: '100%',
 }
 
 .header__inner {
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
+    text-align: center;
 }
 
 .header__logo {
-    color: #fff;
+    color: #85786C;
     text-decoration: none;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 30px;
+    font-family: "Noto Serif JP", serif;
 }
 
 .contact-form__content {
@@ -24,26 +28,36 @@
 .contact-form__heading {
     margin-bottom: 40px;
     text-align: center;
+    color: #85786C;
+    font-family: "Noto Serif JP", serif;
 }
 
 .form {
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
     text-align: center;
+}
+
+.form__group-title1{
+    padding:20px 0px;
 }
 
 .form__group {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    text-align: center;
+
 }
 
+.form__label--item {
+    color: #85786C;
+}
+
+
 .form__label--required {
-    margin-left: 5px;
-    padding: 4px 6px;
     border-radius: 3px;
-    background: #fafafa;
-    color: #aaa;
+    color: #EC9A9D;
 }
 
 .form__error {
@@ -55,11 +69,12 @@
 .form__input--text input,
 .form__input--textarea textarea {
     padding: 10px;
-    width: 600px;
-    border: 1px solid #ddd;
+    width: 700px;
+    border: 1px solid #F5F5F5;
     border-radius: 3px;
-
+    background: #F5F5F5;
     appearance: none;
+    color: #85786C;
 }
 
 .form__input--text input {
@@ -70,17 +85,101 @@
     height: 180px;
 }
 
+.form__group-content1{
+    margin-right: 270px;
+}
+
+.cp_ipradio06 .list_item {
+    margin-right: 60px;
+    display: inline-block;
+    color: #85786C;
+}
+
+.cp_ipradio06 label {
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.cp_ipradio06 .option-input {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 17px;
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+.cp_ipradio06 .option-input:before,
+.cp_ipradio06 .option-input:after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.cp_ipradio06 .option-input:after {
+    outline: 2px solid #85786C;
+    transition: all 0.3s ease-in-out;
+}
+
+.cp_ipradio06 .option-input:checked:after {
+    outline: 12px solid #85786C;
+    outline-offset: -10px;
+}
+
+
+
+.select {
+    padding: 12px;
+    width: 400px;
+    border: 1px solid #F5F5F5;
+    border-radius: 3px;
+    background: #F5F5F5;
+    appearance: none;
+    color: #85786C;
+    margin-top: 20px;
+    margin-right: 300px;
+
+}
+
+.select_wrapper {
+    position: relative;
+}
+
+.select_wrapper::after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    right: 320px;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-top: 12px solid #BEB8B2;
+    border-bottom: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 .form__button {
     margin-top: 30px;
 }
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
+    width: 20%;
     height: 50px;
     border: none;
-    border-radius: 3px;
-    background: #000;
+    background: #82766A;
     color: #fff;
     cursor: pointer;
+    font-size: 20px;
 }

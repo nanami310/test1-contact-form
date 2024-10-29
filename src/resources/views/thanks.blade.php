@@ -11,18 +11,19 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="header__inner">
-      <a class="header__logo" href="/">
-        Contact Form
-      </a>
-    </div>
-  </header>
 
   <main>
-    <div class="thanks__content">
-      <div class="thanks__heading">
-        <h2>お問い合わせありがとうございます</h2>
+    <div class="background-text">
+      <h1>Thank you</h1>
+      <div class="overlay-text">
+        <div class="thanks__content">
+          <div class="thanks__heading">
+            <h2>お問い合わせありがとうございました</h2>
+          </div>
+        </div>
+        <div class="form__button">
+          <button class="form__button-submit" type="button" onclick="location.href='{{ route('input.page') }}';">HOME</button>
+        </div>
       </div>
     </div>
   </main>
