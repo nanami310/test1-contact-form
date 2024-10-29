@@ -1,23 +1,17 @@
-<<<<<<< HEAD
-# test1
-# test1
-# test1
-=======
 # お問い合わせホーム
 ## 環境構築
 Dockerビルド
 
-1.
-2.
+1.clone git@github.com:coachtech-material/laravel-docker-template.git
+2.docker-compose up -d --build
 
 Laravel環境構築
 
-1.
-2.
-3.
-4.
-5.
-6.
+1.docker-compose exec php bash
+2.composer install
+3.cp .env.example .env
+4.環境変数を変更
+5.php artisan migrate
 
 ## 使用技術
 - PHP 8.0
@@ -26,5 +20,4 @@ Laravel環境構築
 
 ## URL
 - 開発環境：http://localhost/
-- phpMyAdmin：
->>>>>>> b1820cc44fedb4b583457b03e5823f597ff5c975
+- phpMyAdmin：http://localhost:8080/
