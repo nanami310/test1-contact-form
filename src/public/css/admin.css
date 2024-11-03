@@ -1,69 +1,141 @@
-.attendance__alert--success {
-    padding: 10px 30px;
-    border-color: #badbcc;
-    background-color: #d1e7dd;
-    color: #0f5132;
-}
-
-.attendance__alert--danger {
-    padding: 10px 0;
-    border-color: #f5c2c7;
-    background-color: #f8d7da;
-    color: #842029;
-}
-
-.attendance__alert--danger ul {
-    margin: 0;
-}
-
-.attendance__panel {
-    margin: 0 auto;
-    width: 70%;
-}
-
-.attendance__button {
-    width: 100%;
-    text-align: center;
-}
-
-.attendance__button-submit {
-    padding: 5px;
-    width: 30%;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-}
-
-.attendance__content {
+.admin__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
 }
 
-.attendance-table {
+.admin-form__heading {
     margin: 30px auto;
-    width: 70%;
     text-align: center;
+    color: #85786C;
+    font-family: "Noto Serif JP", serif;
 }
 
-.attendance-table__inner {
-    width: 100%;
+.mb-3 {
+    display: flex;
+    flex-wrap: wrap;
+    /* 必要に応じて折り返しを許可 */
+    gap: 25px;
+    /* 要素間の間隔を調整 */
 }
 
-.attendance-table__row {
-    border-bottom: 1px solid #ddd;
+#nameSearch {
+    flex: 4;
+    /* 4の比率 */
+    
+    background: #FCFBFC;
+    height: 50px;
+    border-radius: 0;
+    border-color: #DBDCD9;
+    color: #B3AFAC;
 }
 
-.attendance-table__header {
-    padding: 12px;
-    width: 20%;
-    font-weight: bold;
+#genderSearch {
+    flex: 1;
+    /* 1の比率 */
+    background: #F5F5F5;
+    height: 50px;
+    border-radius: 0;
+    border-color: #DBDCD9;
+    color: #85786C;
 }
 
-.attendance-table__item {
-    padding: 12px;
-    width: 20%;
+#contentTypeSearch {
+    flex: 3;
+    /* 3の比率 */
+    background: #F5F5F5;
+    height: 50px;
+    border-radius: 0;
+    border-color: #DBDCD9;
+    color: #85786C;
+}
+
+#dateSearch {
+    flex: 2;
+    /* 2の比率 */
+    background: #F5F5F5;
+    height: 50px;
+    border-radius: 0;
+    border-color: #DBDCD9;
+    color: #85786C;
+}
+
+#searchButton {
+    flex: 1;
+    /* 各ボタンの比率を1に設定 */
+    background: #85786C;
+    height: 50px;
+    border-radius: 0;
+    border-color: #DBDCD9;
+    color: #FFFFFF;
+}
+
+#resetButton {
+    flex: 1;
+    background: #DBC4B5;
+    height: 50px;
+    border-radius: 0;
+    border-color: #DBDCD9;
+    color: #FFFFFF;
+}
+
+thead{
+    background: #85786C;
+    color: #FFFFFF;
+}
+
+.table{
+    border: solid 1px #DBDCD9;
+}
+
+.table-content{
+    color: #85786C;
+}
+
+.btn{
+    color: #DBC4B5;
+    background: #FCFBFC;
+    border-radius: 0;
+    border-color: #DBC4B5;
+}
+
+.modal-content{
+    border-radius: 0;
+    border: solid 2px #85786C;
+}
+
+
+.modal-header{
+    border:none;
+}
+
+.close{
+    color: #85786C
+}
+
+.modal-body{
+    margin: 0 auto;
+    padding: 30px 15px;
+    color: #85786C;
+}
+
+.modal-footer{
+    border: none;
+    margin: 30px 40%;
+}
+
+.btn-2 {
+    color: #FFFFFF;
+    background: #BC3810;
+    border-radius: 0;
+    border:none;
+    box-shadow:0;
+    padding: 5px 15px;
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+    color: #85786C;
 }

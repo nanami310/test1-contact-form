@@ -9,7 +9,7 @@ body {
 }
 
 .login-form__heading {
-    margin-bottom: 40px;
+    margin: 50px auto;
     text-align: center;
     color: #85786C;
     font-family: "Noto Serif JP", serif;

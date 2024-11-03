@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
   <link rel="stylesheet" href="{{ asset('css/common.css') }}">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas&
+family=Noto+Serif+JP:wght@900&display=swap" rel="stylesheet">
   @yield('css')
 </head>
 

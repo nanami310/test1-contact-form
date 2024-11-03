@@ -44,7 +44,7 @@ class ContactController extends Controller
     public function getContacts()
     {
         // 全てのコンタクトを取得
-        $contacts = Contact::all();
+        $contacts = Contact::paginate(7);
         return view('admin', compact('contacts'));
     }
 
