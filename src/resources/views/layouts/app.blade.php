@@ -24,7 +24,7 @@
             <li class="header-nav__item">
               <form class="form" action="{{ route('logout') }}" method="post" style="display:inline;">
                 @csrf
-                <button class="header-nav__button">logout</button>
+                <button class="header-nav__link">logout</button>
               </form>
             </li>
             @else
