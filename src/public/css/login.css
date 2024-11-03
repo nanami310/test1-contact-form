@@ -1,87 +1,27 @@
-.header {
-    background: #ffffff;
-    border-bottom: 2px solid #E4E4E4;
-    width: '100%',
-}
-
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    margin:0 5% 0 40%;
-}
-
-.header__logo {
-    color: #85786C;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: "Noto Serif JP", serif;
-    
-    
-}
-
-.form__register{
-    margin-top: 10px;
-    padding: 6px;
-    width: 85pX;
-    height: 30px;
-    border: none;
-    background: #F6F6F5;
-    color: #C8C7C3;
-    cursor: pointer;
-    font-size: 15px;
-    border: 1px solid #D1CFCE;
-    
-}
-
-body{
-    background: #F2ECE7;
-}
-
-.contact-form__content {
+.login-form__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
 }
 
-.contact-form__heading {
-    margin-bottom: 40px;
+.login-form__heading {
+    margin-bottom: 20px;
     text-align: center;
-    color: #85786C;
-    font-family: "Noto Serif JP", serif;
 }
 
 .form {
     margin: 0 auto;
-    width: 600px;
+    width: 25%;
     text-align: center;
-    background: #ffffff;
-    padding: 50px 120px 50px;
-    border-radius: 10px;
-    border: 1px solid #D1CFCE;
-   
-
-}
-
-.form__group-title{
-    padding: 5px 0px;
-    display: flex;
 }
 
 .form__group {
-    justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
-.form__label--item {
-    color: #85786C;
-    font-size: 20px;
+.form__group-title {
+    text-align: left;
 }
-
 
 .form__error {
     height: 20px;
@@ -89,36 +29,32 @@ body{
     text-align: left;
 }
 
-.form__group-content{
-    padding: 5px;
-    width: 300px;
-}
-
-.form__input--text input{
+.form__input--text input {
     padding: 10px;
-    width: 350px;
-    border: 1px solid #F5F5F5;
-    border-radius: 3px;
-    background: #F5F5F5;
-    appearance: none;
-    color: #85786C;
+    width: 100%;
     height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+
+    appearance: none;
 }
-
-
-
 
 .form__button {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
-.form__button-login {
+.form__button-submit {
     padding: 10px;
-    width: 45%;
+    width: 30%;
     height: 50px;
     border: none;
-    background: #82766A;
+    border-radius: 3px;
+    background: #000;
     color: #fff;
     cursor: pointer;
-    font-size: 20px;
+}
+
+.register__link {
+    margin-top: 20px;
+    text-align: center;
 }

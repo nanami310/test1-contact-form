@@ -1,38 +1,36 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" 
-content="IE=edge" />
-  <meta name="viewport" content="width=device-width, 
-initial-scale=1.0" />
-  <title>FashionablyLate</title>
-  <link rel="stylesheet" href="{{ asset('css/
-sanitize.css') }}" />
-  <link rel="stylesheet" href="{{ asset('css/admin.
-css') }}" />
-  <link rel="stylesheet" href="css/style.css">
-<link rel="preconnect" href="https://fonts.gstatic.
-com">
-<link 
-href="https://fonts.googleapis.com/css2?
-family=Gorditas&family=Noto+Serif+JP:wght@900&
-display=swap"
-rel="stylesheet">
-</head>
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+@endsection
 
-<body>
-    <header class="header">
-        <div class="header__inner">
-            <a class="header__logo" href="/">FashionablyLate</a>
-                <button class="form__register" type="button"  onclick="location.href='{{ route('input.page') }}';">register</button>
-        </div>
-    </header>
-    <h1>ダッシュボード</h1>
-    <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit">ログアウト</button>
+@section('content')
+<div class="attendance__alert">
+  // メッセージ機能
+</div>
+
+<div class="attendance__content">
+  <div class="attendance__panel">
+    <form class="attendance__button">
+      <button class="attendance__button-submit" type="submit">勤務開始</button>
     </form>
-</body>
-</body>
+    <form class="attendance__button">
+      <button class="attendance__button-submit" type="submit">勤務終了</button>
+    </form>
+  </div>
+  <div class="attendance-table">
+    <table class="attendance-table__inner">
+      <tr class="attendance-table__row">
+        <th class="attendance-table__header">名前</th>
+        <th class="attendance-table__header">開始時間</th>
+        <th class="attendance-table__header">終了時間</th>
+      </tr>
+      <tr class="attendance-table__row">
+        <td class="attendance-table__item">サンプル太郎</td>
+        <td class="attendance-table__item">サンプル</td>
+        <td class="attendance-table__item">サンプル</td>
+      </tr>
+    </table>
+  </div>
+</div>
+@endsection
