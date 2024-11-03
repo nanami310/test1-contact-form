@@ -57,9 +57,5 @@
 }
 
 .header-nav__item {
-    margin: -50px auto;
-}
-
-body {
-    background: #F2ECE7;
+    margin: 0px auto;
 }

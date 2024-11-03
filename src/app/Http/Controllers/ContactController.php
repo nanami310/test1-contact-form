@@ -40,4 +40,30 @@ class ContactController extends Controller
         
         return redirect()->route('contacts.index'); // 必要に応じてリダイレクト先を変更
     }
+
+    public function getContacts()
+    {
+        // 全てのコンタクトを取得
+        $contacts = Contact::all();
+        return view('admin', compact('contacts'));
+    }
+
+    public function show($id)
+    {
+        // 指定されたIDのコンタクトを取得
+        $contact = Contact::findOrFail($id);
+    
+        return view('contact.details', compact('contact')); // 詳細ビューに渡す
+    }
+    
+    public function destroy($id) {
+    $contact = Contact::find($id);
+
+    if (!$contact) {
+        return response()->json(['success' => false, 'message' => 'コンタクトが見つかりません。'], 404);
+    }
+
+    $contact->delete();
+    return response()->json(['success' => true]);
+    }
 }
