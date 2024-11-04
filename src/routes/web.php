@@ -29,4 +29,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 Route::get('/contact/{id}', [ContactController::class, 'show'])->name('contact.details');
-Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
+Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');

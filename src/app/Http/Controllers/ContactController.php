@@ -55,15 +55,13 @@ class ContactController extends Controller
     
         return view('contact.details', compact('contact')); // 詳細ビューに渡す
     }
-    
-    public function destroy($id) {
-    $contact = Contact::find($id);
 
-    if (!$contact) {
-        return response()->json(['success' => false, 'message' => 'コンタクトが見つかりません。'], 404);
+    public function destroy($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+
+        return response()->json(['success' => true]);
     }
 
-    $contact->delete();
-    return response()->json(['success' => true]);
-    }
 }

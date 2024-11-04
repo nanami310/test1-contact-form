@@ -2,6 +2,11 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+<style>
+    .modal-backdrop {
+        display: none; /* モーダルのバックドロップを非表示にする */
+    }
+</style>
 @endsection
 
 @section('content')
@@ -30,12 +35,9 @@
         <button id="resetButton" class="btn btn-secondary" onclick="resetFilters()">リセット</button>
     </div>
 
-    <!-- ページネーションの表示 -->
-    <div class="d-flex justify-content-center">
-        {{ $contacts->links() }}
+    <div class="d-flex justify-content-end mt-3">
+        {{ $contacts->links('vendor.pagination.bootstrap-4') }} <!-- カスタムページネーションリンク -->
     </div>
-
-
 
     <table class="table">
         <thead>
@@ -49,7 +51,7 @@
         </thead>
         <tbody>
             @foreach($contacts as $contact)
-                <tr class="table-content">
+                <tr class="table-content" data-id="{{ $contact->id }}">
                     <td>{{ $contact->name }}</td>
                     <td>{{ $contact->gender }}</td>
                     <td>{{ $contact->email }}</td>
@@ -68,14 +70,38 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p><strong>お名前</strong> {{ $contact->name }}</p>
-                                <p><strong>性別</strong> {{ $contact->gender }}</p>
-                                <p><strong>メールアドレス</strong> {{ $contact->email }}</p>
-                                <p><strong>電話番号</strong> {{ $contact->tel }}</p>
-                                <p><strong>住所</strong> {{ $contact->address }}</p>
-                                <p><strong>建物名</strong> {{ $contact->building }}</p>
-                                <p><strong>お問い合わせの種類</strong> {{ $contact->content_type }}</p>
-                                <p><strong>お問い合わせ内容</strong> {{ $contact->content }}</p>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>お名前</strong></label>
+                                    <div class="col-sm-8">{{ $contact->name }}</div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>性別</strong></label>
+                                    <div class="col-sm-8">{{ $contact->gender }}</div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>メールアドレス</strong></label>
+                                    <div class="col-sm-8">{{ $contact->email }}</div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>電話番号</strong></label>
+                                    <div class="col-sm-8">{{ $contact->tel }}</div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>住所</strong></label>
+                                    <div class="col-sm-8">{{ $contact->address }}</div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>建物名</strong></label>
+                                    <div class="col-sm-8">{{ $contact->building }}</div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>お問い合わせの種類</strong></label>
+                                    <div class="col-sm-8">{{ $contact->content_type }}</div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4"><strong>お問い合わせ内容</strong></label>
+                                    <div class="col-sm-8">{{ $contact->content }}</div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn-2 btn-danger" onclick="deleteContact({{ $contact->id }})">削除</button>
@@ -110,7 +136,6 @@ function filterContacts() {
             const nameCell = cells[0].textContent.toLowerCase();
             const genderCell = cells[1].textContent;
             const contentTypeCell = cells[3].textContent;
-            const dateCell = cells[4].textContent;
 
             if (nameCell.indexOf(nameFilter) === -1) {
                 found = false;
@@ -119,9 +144,6 @@ function filterContacts() {
                 found = false;
             }
             if (contentTypeFilter && contentTypeCell !== contentTypeFilter) {
-                found = false;
-            }
-            if (dateFilter && dateCell !== dateFilter) {
                 found = false;
             }
         }
@@ -137,6 +159,43 @@ function resetFilters() {
     document.getElementById('dateSearch').value = '';
     filterContacts(); // フィルターを再適用
 }
-</script>
 
+function deleteContact(id) {
+    if (confirm('本当に削除しますか？')) {
+        fetch(`/contacts/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (response.ok) {
+                // 行を削除
+                const row = document.querySelector(`tr[data-id="${id}"]`);
+                if (row) {
+                    row.remove(); // 行を削除
+                } else {
+                    console.warn('行が見つかりませんでした。');
+                }
+
+                // モーダルを閉じる
+                const modalElement = document.getElementById('contactModal' + id);
+                if (modalElement) {
+                    const modal = new bootstrap.Modal(modalElement);
+                    modal.hide();
+                }
+
+                alert('削除が成功しました。');
+            } else {
+                alert('削除に失敗しました。');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('削除に失敗しました。詳細: ' + error.message);
+        });
+    }
+}
+</script>
 @endsection
