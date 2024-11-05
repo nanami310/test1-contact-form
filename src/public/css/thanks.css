@@ -1,51 +1,34 @@
 body {
     margin: 0;
-    /* マージンをリセット */
     height: 100vh;
-    /* ビューポートの高さに合わせる */
     display: flex;
     justify-content: center;
-    /* 水平中央揃え */
     align-items: center;
-    /* 垂直中央揃え */
     overflow: hidden;
-    /* はみ出した部分を隠す */
 }
 
 .background-text {
     position: relative;
     font-size: 150px;
-    /* フォントサイズを大きく設定 */
     color: rgba(0, 0, 0, 0.1);
-    /* 文字色を薄い黒に設定 */
     text-align: center;
-    /* テキストを中央揃え */
     white-space: nowrap;
-    /* テキストが折り返さないようにする */
     
 }
 
 .background-text h1 {
     position: absolute;
-    /* 絶対位置に設定 */
     top: 50%;
-    /* 縦中央に配置 */
     left: 50%;
-    /* 横中央に配置 */
     transform: translate(-50%, -100%);
-    /* 中心に揃える */
     font-family: "Noto Serif JP", serif;
 }
 
 .overlay-text {
     position: absolute;
-    /* 絶対位置に設定 */
     top: 60%;
-    /* 背景文字の少し下に配置 */
     left: 50%;
-    /* 横中央に配置 */
     transform: translate(-50%, -50%);
-    /* 中心に揃える */
 }
 
 .thanks__content {

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 <style>
     .modal-backdrop {
-        display: none; /* モーダルのバックドロップを非表示にする */
+        display: none; 
     }
 </style>
 @endsection
@@ -36,7 +36,7 @@
     </div>
 
     <div class="d-flex justify-content-end mt-3">
-        {{ $contacts->links('vendor.pagination.bootstrap-4') }} <!-- カスタムページネーションリンク -->
+        {{ $contacts->links('vendor.pagination.bootstrap-4') }} 
     </div>
 
     <table class="table">
@@ -128,7 +128,7 @@ function filterContacts() {
     const table = document.querySelector('.table');
     const rows = table.getElementsByTagName('tr');
 
-    for (let i = 1; i < rows.length; i++) { // i = 1 はヘッダーをスキップ
+    for (let i = 1; i < rows.length; i++) { 
         const cells = rows[i].getElementsByTagName('td');
         let found = true;
 
@@ -148,7 +148,7 @@ function filterContacts() {
             }
         }
 
-        rows[i].style.display = found ? "" : "none"; // 一致したら表示、一致しなければ非表示
+        rows[i].style.display = found ? "" : "none";
     }
 }
 
@@ -157,7 +157,7 @@ function resetFilters() {
     document.getElementById('genderSearch').value = '';
     document.getElementById('contentTypeSearch').value = '';
     document.getElementById('dateSearch').value = '';
-    filterContacts(); // フィルターを再適用
+    filterContacts(); 
 }
 
 function deleteContact(id) {
@@ -171,15 +171,12 @@ function deleteContact(id) {
         })
         .then(response => {
             if (response.ok) {
-                // 行を削除
                 const row = document.querySelector(`tr[data-id="${id}"]`);
                 if (row) {
-                    row.remove(); // 行を削除
+                    row.remove();
                 } else {
                     console.warn('行が見つかりませんでした。');
                 }
-
-                // モーダルを閉じる
                 const modalElement = document.getElementById('contactModal' + id);
                 if (modalElement) {
                     const modal = new bootstrap.Modal(modalElement);

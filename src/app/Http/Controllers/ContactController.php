@@ -8,14 +8,12 @@ class ContactController extends Controller
 {
     public function index()
     {
-        // セッションからデータを取得
         $data = session('form_data', []);
         return view('index', compact('data'));
     }
 
     public function confirm(ContactRequest $request)
     {
-        // 入力データをセッションに保存
         $request->session()->put('form_data', $request->only(['name', 'gender', 'email', 'tel', 'address', 'building', 'content_type', 'content']));
         
         $contact = $request->only(['name', 'gender', 'email', 'tel', 'address', 'building', 'content_type', 'content']);
@@ -27,7 +25,6 @@ class ContactController extends Controller
         $contact = $request->only(['name', 'gender', 'email', 'tel', 'address', 'building', 'content_type', 'content']);
         Contact::create($contact);
         
-        // セッションからデータを削除
         $request->session()->forget('form_data');
 
         return view('thanks');
@@ -35,25 +32,22 @@ class ContactController extends Controller
 
     public function clearSession(Request $request)
     {
-        // 他のボタンが押された場合、セッションをクリア
         $request->session()->forget('form_data');
         
-        return redirect()->route('contacts.index'); // 必要に応じてリダイレクト先を変更
+        return redirect()->route('contacts.index');
     }
 
     public function getContacts()
     {
-        // 全てのコンタクトを取得
         $contacts = Contact::paginate(7);
         return view('admin', compact('contacts'));
     }
 
     public function show($id)
     {
-        // 指定されたIDのコンタクトを取得
         $contact = Contact::findOrFail($id);
     
-        return view('contact.details', compact('contact')); // 詳細ビューに渡す
+        return view('contact.details', compact('contact'));
     }
 
     public function destroy($id)
@@ -63,5 +57,6 @@ class ContactController extends Controller
 
         return response()->json(['success' => true]);
     }
+    
 
 }

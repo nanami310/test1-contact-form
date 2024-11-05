@@ -25,7 +25,7 @@ Route::post('/contacts/store', [ContactController::class, 'store'])->name('conta
 Route::post('/contacts/clear', [ContactController::class, 'clearSession'])->name('contacts.clear');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [ContactController::class, 'getContacts'])->name('admin.contacts'); // コンタクト一覧を表示
+    Route::get('/admin', [ContactController::class, 'getContacts'])->name('admin.contacts'); 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 Route::get('/contact/{id}', [ContactController::class, 'show'])->name('contact.details');

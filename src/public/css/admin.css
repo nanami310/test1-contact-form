@@ -14,15 +14,11 @@
 .mb-3 {
     display: flex;
     flex-wrap: wrap;
-    /* 必要に応じて折り返しを許可 */
     gap: 25px;
-    /* 要素間の間隔を調整 */
 }
 
 #nameSearch {
     flex: 4;
-    /* 4の比率 */
-    
     background: #FCFBFC;
     height: 50px;
     border-radius: 0;
@@ -32,7 +28,6 @@
 
 #genderSearch {
     flex: 1;
-    /* 1の比率 */
     background: #F5F5F5;
     height: 50px;
     border-radius: 0;
@@ -42,7 +37,6 @@
 
 #contentTypeSearch {
     flex: 3;
-    /* 3の比率 */
     background: #F5F5F5;
     height: 50px;
     border-radius: 0;
@@ -52,7 +46,6 @@
 
 #dateSearch {
     flex: 2;
-    /* 2の比率 */
     background: #F5F5F5;
     height: 50px;
     border-radius: 0;
@@ -62,7 +55,6 @@
 
 #searchButton {
     flex: 1;
-    /* 各ボタンの比率を1に設定 */
     background: #85786C;
     height: 50px;
     border-radius: 0;
@@ -114,7 +106,7 @@ thead{
 }
 
 .modal-body{
-    margin:0 0 auto 70px;
+    margin:0 0 auto 25px;
     padding: 30px 15px;
     color: #85786C;
 }
@@ -122,12 +114,10 @@ thead{
 .modal-body .form-group {
     display: flex;
     align-items: center;
-    /* 縦方向の中央揃え */
 }
 
 .modal-body .form-group label {
     margin-bottom: 0;
-    /* ラベルの下余白を削除 */
 }
 
 .modal-footer{
@@ -137,14 +127,11 @@ thead{
 
 .modal-dialog {
     max-width: 600%;
-    /* お好みの幅に変更 */
     width: 600px;
-    /* 画面サイズに応じて幅を調整 */
 }
 
 .modal-backdrop {
     display: none;
-    /* モーダルのバックドロップを非表示にする */
 }
 
 .btn-2 {
@@ -175,35 +162,26 @@ svg.w-5.h-5 {
 
 .pagination li a {
     color: #85786C;
-        /* デフォルトのリンク色 */
     background-color: transparent;
-        /* デフォルトの背景色 */
     transition: background-color 0.3s, color 0.3s;
-        /* スムーズな遷移 */
         padding: 5px 15px;
 }
 
 .pagination li.active span {
     color: white;
-        /* アクティブなページ番号の文字色 */
         background-color: #85786C;
-        /* アクティブなページ番号の背景色 */
         padding: 5px 15px;
 }
 
 .pagination li a:hover,
 .pagination li a:focus {
     color: white;
-    /* ホバー時の文字色 */
     background-color: #85786C;
     padding: 5px 15px;
-    /* ホバー時の背景色 */
 }
 
 .pagination li.disabled span {
     color: gray;
-    /* 無効なリンクの文字色 */
     background-color: transparent;
-    /* 無効なリンクの背景色 */
     padding: 5px 15px;
 }

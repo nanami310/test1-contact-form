@@ -16,30 +16,30 @@
 
   <style>
     .header-nav__link {
-        color: #D9D1CC; /* 親要素の色を継承 */
-        text-decoration: none; /* 下線を消す */
+        color: #D9D1CC; 
+        text-decoration: none; 
        
     }
 
     .header-nav__link:active,
     .header-nav__link:focus,
     .header-nav__link:hover {
-        color: #D9D1CC; /* すべての状態で色を変えない */
-        outline: none; /* フォーカス時のアウトラインを消す */
+        color: #D9D1CC; 
+        outline: none; 
         text-decoration: none;
     }
 
     .header-nav__item button {
-        background: none; /* ボタンの背景を消す */
-        border: none; /* ボタンの境界線を消す */
-        color: #D9D1CC; /* 親要素の色を継承 */
-        padding: 0; /* パディングをリセット */
+        background: none; 
+        border: none; 
+        color: #D9D1CC; 
+        padding: 0; 
        
     }
 
     .header-nav__item button:active,
     .header-nav__item button:focus {
-        outline: none; /* フォーカス時のアウトラインを消す */
+        outline: none; 
         text-decoration: none;
     }
     .header__logo {
@@ -48,7 +48,7 @@
   }
 
   .header__logo:hover {
-      color: #85786C; /* ホバー時に色を変えない */
+      color: #85786C; 
     
        text-decoration: none;
   }
